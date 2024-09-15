@@ -7,10 +7,10 @@ intents.members = True
 intents.message_content = True 
 bot = commands.Bot(command_prefix="p!", intents=intents)
 
-welcome_channel_id = 1152991217899012226 
-staff_channel_id = 1152990483317018694   
-rules_channel_id = 1152989650470846524   
-server_website = "https://pamkoto.com"   
+welcome_channel_id = Your_ID 
+staff_channel_id = Your_ID   
+rules_channel_id = Your_ID  
+server_website = ""   
 
 welcome_message = (
     "Seja bem-vindo {member}! \n\n"
@@ -33,7 +33,7 @@ async def on_member_join(member):
     if channel:
         embed = discord.Embed(title="Bem-vindo(a)!", description=welcome_message.format(member=member.mention), color=0x18fcf2)
         embed.set_thumbnail(url=member.avatar.url)
-        embed.add_field(name="IP do servidor", value="pamkoto.com")
+        embed.add_field(name="IP do servidor", value="")
         view = WelcomeView()
         await channel.send(embed=embed, view=view)
 
@@ -97,4 +97,4 @@ async def clear(ctx, amount: int):
     await ctx.channel.purge(limit=amount)
     await ctx.send(f'{amount} mensagens foram apagadas.', delete_after=5)
 
-bot.run('MTI1OTgzMzA0MzMwMDkwOTEyNw.G9urb3.07F9oCYQ-7zXTLZoIku-xYJncXNQpdlwaV3lKw')
+bot.run('Your_Token')
